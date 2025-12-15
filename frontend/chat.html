@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="avatar">U</div>
+        <div>
+          <div class="user-name">You</div>
+          <div class="user-status">online</div>
+        </div>
+      </div>
+      <div class="sidebar-search">
+        <input id="friendIdInput" placeholder="Search or paste userId" />
+        <button onclick="setFriend()">Set</button>
+      </div>
+      <div class="demo-list">
+        <div class="demo-title">Demo chats</div>
+        <button class="demo-pill" onclick="setFriendFromDemo('navadeep')">
+          navadeep
+        </button>
+        <button class="demo-pill" onclick="setFriendFromDemo('yatisha')">
+          yatisha
+        </button>
+      </div>
+      <ul id="friends" class="friend-list"></ul>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-header">
+        <div>
+          <div class="chat-with" id="chatWith">Select a friend</div>
+          <div class="chat-status">online</div>
+        </div>
+        <div class="chat-actions">
+          <button class="ghost" onclick="logout()">Logout</button>
+        </div>
+      </div>
+      <div id="messages"></div>
+      <div class="input-box">
+        <input id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
